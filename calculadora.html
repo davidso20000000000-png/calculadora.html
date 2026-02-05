@@ -1,0 +1,177 @@
+<!doctype html>
+<html>
+    <head>
+        <title>minha calculadora</title>
+    </head>
+<body>
+    <div style="width: 260px;
+    margin: 50px auto;
+    padding: 20px;
+    border: 2px solid #333;
+    border-radius: 10px;
+    text-align: center;
+    ">
+
+
+    <!--Minha calculadora vai aparecer aqui --> 
+
+<input type="text" id="visor" value="0" readonly 
+    style="
+    width: 220px;
+     height: 50px;
+      font-size: 26px; 
+      text-align: right; padding-right: 10px;
+        ">
+        <div style="margin-top: 20px;"></div>
+        <button onclick="apertar(1)" style="
+  width: 50px;
+  height: 50px;
+  font-size: 18px;
+  margin: 3px;
+">1</button>
+
+        <button onclick="apertar(2)" style="
+  width: 50px;
+  height: 50px;
+  font-size: 18px;
+  margin: 3px;
+">2</button>
+
+        <button onclick="apertar(3)" style="
+  width: 50px;
+  height: 50px;
+  font-size: 18px;
+  margin: 3px;
+">3</button>
+
+        <br>
+
+        <button onclick="apertar(4)" style="
+  width: 50px;
+  height: 50px;
+  font-size: 18px;
+  margin: 3px;
+">4</button>
+
+        <button onclick="apertar(5)" style="
+  width: 50px;
+  height: 50px;
+  font-size: 18px;
+  margin: 3px;
+">5</button>
+
+        <button onclick="apertar(6)" style="
+  width: 50px;
+  height: 50px;
+  font-size: 18px;
+  margin: 3px;
+">6</button>
+
+        <br>
+
+        <button onclick="apertar(7)" style="
+  width: 50px;
+  height: 50px;
+  font-size: 18px;
+  margin: 3px;
+">7</button>
+
+        <button onclick="apertar(8)" style="
+  width: 50px;
+  height: 50px;
+  font-size: 18px;
+  margin: 3px;
+">8</button>
+
+        <button onclick="apertar(9)" style="
+  width: 50px;
+  height: 50px;
+  font-size: 18px;
+  margin: 3px;
+">9</button>
+
+        <br>
+
+        <button onclick="apertar(0)" style="
+  width: 106px;
+  height: 50px;
+  font-size: 18px;
+  margin: 3px;
+">0</button>
+    <br>
+
+        <button onclick="limpar()">C</button>
+        <button onclick="calcular()">=</button>
+        <button onclick="somar()">+</button>
+        <button onclick="subtrair()">-</button>
+        <button onclick="multiplicar()">*</button>
+        <button onclick="dividir()">/</button>
+    </div>
+    </body>
+
+<script>
+    function apertar(numero) {
+    let visor = document.getElementById("visor");
+    if (visor.value === "0") {
+        visor.value = numero;
+    } else {
+        visor.value = visor.value + numero;
+    }
+}
+
+function limpar() {
+        let visor = document.getElementById("visor");       
+        visor.value = "0";
+    }
+
+    function somar() {
+        let visor = document.getElementById("visor");
+        numero1 = Number(visor.value);
+        operacao = "+";
+        visor.value = "0";
+    }
+
+    function subtrair() {
+        let visor = document.getElementById("visor");
+        numero1 = Number(visor.value);
+        operacao = "-";
+        visor.value = "0";
+    }
+
+    function multiplicar() {
+        let visor = document.getElementById("visor");
+        numero1 = Number(visor.value);
+        operacao = "*";
+        visor.value = "0";
+    }
+
+    function dividir() {
+        let visor = document.getElementById("visor");
+        numero1 = Number(visor.value);
+        operacao = "/";
+        visor.value = "0";
+    }
+
+    function calcular() {
+        let visor = document.getElementById("visor");
+        numero2 = Number(visor.value);
+        let resultado;
+    
+        if (operacao === "+") {
+            resultado = numero1 + numero2;
+        }
+
+            if (operacao === "-") {
+                resultado = numero1 - numero2;
+            }
+
+        if (operacao === "*") {
+            resultado = numero1 * numero2;
+        }
+
+        if (operacao === "/") {
+            resultado = numero1 / numero2;
+        }
+        visor.value = resultado;
+    }
+</script>
